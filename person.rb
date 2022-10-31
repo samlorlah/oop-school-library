@@ -1,20 +1,23 @@
 class Person
-  # Getters
-  attr_accessor :name, :age, :id
+  attr_reader :id
+  attr_accessor :name, :age
 
-  def initialize(age, name="Unknown", parent_permission=true)
+  def initialize(age, name = 'Unknown', parent_permission: true)
     @id = rand(1..1000)
     @age = age
     @name = name
     @parent_permission = parent_permission
   end
 
-  #Private Methods
-  def is_of_age?
-    if @age >= 18
-      true
-    else
-      false
-    end
+  # Private Methods
+  def of_age?
+    @age >= 18
   end
+  private :of_age?
+
+  # Public Methods
+  def can_use_services?
+    of_age? || @parent_permission
+  end
+  public :can_use_services?
 end
