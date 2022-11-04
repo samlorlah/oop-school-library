@@ -2,11 +2,7 @@ require './app'
 @app = App.new
 
 def main
-  books = []
-  people = []
-  rentals = []
-
-  options(books, people, rentals)
+  options
 end
 
 def display_list
@@ -22,7 +18,9 @@ def display_list
     7 - Exit"
 end
 
-def options(books, people, rentals)
+# rubocop:disable Metrics/MethodLength
+# rubocop:disable Metrics/CyclomaticComplexity
+def options
   loop do
     display_list
     option = gets.chomp.to_i
@@ -46,7 +44,9 @@ def options(books, people, rentals)
       puts 'invalid Input. Please try again'
       break
     end
-
   end
 end
+# rubocop:enable Metrics/MethodLength
+# rubocop:enable Metrics/CyclomaticComplexity
+
 main
