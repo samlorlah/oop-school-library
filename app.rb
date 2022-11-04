@@ -56,11 +56,11 @@ class App
         puts 'Student created successfully.'
       else
         puts 'Invalid Input'
+        @peoples.push(Teacher.new(specialization, age, true, name))
       end
     when 2
       puts 'Teacher\'s Specialization'
       specialization = gets.chomp.to_s
-      @peoples.push(Teacher.new(specialization, age, true, name))
       puts 'Teacher created successfully.'
     else
       puts 'INVALID NUMBER!!'
