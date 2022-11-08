@@ -43,19 +43,21 @@ class App
     age = gets.chomp.to_i
     case choice
     when 1
-      create_student(age, name)
+      puts 'Student\'s Classroom'
+      classroom = gets.chomp.to_s
+      puts 'Has Parent Permission? Y / N'
+      permission = gets.chomp.strip.upcase
+      create_student(age, name, classroom, permission)
     when 2
-      create_teacher(age, name)
+      puts 'Teacher\'s Specialization'
+      specialization = gets.chomp.to_s
+      create_teacher(age, name, specialization)
     else
       puts 'INVALID NUMBER!!'
     end
   end
 
-  def create_student(age, name)
-    puts 'Student\'s Classroom'
-    classroom = gets.chomp.to_s
-    puts 'Has Parent Permission? Y / N'
-    permission = gets.chomp.strip.upcase
+  def create_student(age, name, classroom, permission)
     case permission
     when 'Y'
       @peoples.push(Student.new(classroom, age, true, name))
@@ -68,9 +70,7 @@ class App
     end
   end
 
-  def create_teacher(age, name)
-    puts 'Teacher\'s Specialization'
-    specialization = gets.chomp.to_s
+  def create_teacher(age, name, specialization)
     @peoples.push(Teacher.new(specialization, age, true, name))
     puts 'Teacher created successfully.'
   end
