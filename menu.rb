@@ -21,8 +21,10 @@ class Menu
       6 - List all rentals for a given person id
       7 - Exit"
     option = gets.chomp.to_i
-    return puts 'Thank you for using the school library!' if option == 7
-
+    if option == 7 then
+      storage.write_data
+      return puts 'Thank you for using the school library!' 
+    end
     options(option)
   end
 

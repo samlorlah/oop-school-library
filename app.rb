@@ -6,7 +6,7 @@ require './classroom'
 require './person'
 
 class App
-  attr_accessor :books, :peoples, :rentals
+  attr_accessor :books, :students, :teachers, :rentals
 
   def initialize
     @books = []
@@ -43,19 +43,21 @@ class App
     age = gets.chomp.to_i
     case choice
     when 1
-      create_student(age, name)
+      puts 'Student\'s Classroom'
+      classroom = gets.chomp.to_s
+      puts 'Has Parent Permission? Y / N'
+      permission = gets.chomp.strip.upcase
+      create_student(age, name, classroom, permission)
     when 2
-      create_teacher(age, name)
+      puts 'Teacher\'s Specialization'
+      specialization = gets.chomp.to_s
+      create_teacher(age, name, specialization)
     else
       puts 'INVALID NUMBER!!'
     end
   end
 
-  def create_student(age, name)
-    puts 'Student\'s Classroom'
-    classroom = gets.chomp.to_s
-    puts 'Has Parent Permission? Y / N'
-    permission = gets.chomp.strip.upcase
+  def create_student(age, name, classroom, permission)
     case permission
     when 'Y'
       @peoples.push(Student.new(classroom, age, true, name))
@@ -68,23 +70,25 @@ class App
     end
   end
 
-  def create_teacher(age, name)
-    puts 'Teacher\'s Specialization'
-    specialization = gets.chomp.to_s
+  def create_teacher(age, name, specialization)
     @peoples.push(Teacher.new(specialization, age, true, name))
     puts 'Teacher created successfully.'
   end
 
-  def create_book
+  def add_new_book
     puts 'Book Title: '
     title = gets.chomp
     puts 'Book Author: '
     author = gets.chomp
+    create_book(title, author)
+  end
+
+  def create_book(title, author)
     @books.push(Book.new(title, author))
     puts 'Book created successfully!'
   end
 
-  def create_rental
+  def add_new_rental
     puts 'Select a book from the following list by number'
     list_all_books
     bk_choice = gets.chomp.to_i
@@ -93,6 +97,10 @@ class App
     p_choice = gets.chomp.to_i
     puts 'Enter today\'s date: '
     date = gets.chomp
+    create_rental(bk_choice, p_choice, date)
+  end
+
+  def create_rental(bk_choice, p_choice, date)
     @rentals.push(Rental.new(date, @books[bk_choice], @peoples[p_choice]))
     puts 'Rental added successfully'
   end

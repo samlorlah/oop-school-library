@@ -1,1 +1,1 @@
-[{:title=>"Quijote", :author=>"Cervantes"}, {:title=>"Iliad", :author=>"Homer"}]
+[{:title=>"QUijote", :author=>"Cervantes"}]
