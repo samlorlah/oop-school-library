@@ -83,11 +83,10 @@ class App
     add_new_book(title, author)
   end
 
-  def add_new_book(title,author)
+  def add_new_book(title, author)
     @books.push(Book.new(title, author))
     puts 'Book created successfully!'
   end
-
 
   def create_rental
     puts 'Select a book from the following list by number'

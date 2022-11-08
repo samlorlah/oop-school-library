@@ -16,12 +16,14 @@ class Menu
       5 - Create a rental
       6 - List all rentals for a given person id
       7 - Exit"
+    option = gets.chomp.to_i
+    if (option == 7) then return puts 'Thank you for using the school library!'
+    else 
+      options(option)
+    end
   end
 
   def options(option)
-    if (option == 7) then
-      return puts 'Thank you for using the school library!'
-    else
     case option
     when 1
       @app.list_all_books
@@ -38,8 +40,6 @@ class Menu
     else
       puts 'invalid Input. Please try again'
     end
-    end
-    display_list()
-    options(gets.chomp.to_i)
+    display_list
   end
 end
