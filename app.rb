@@ -34,7 +34,6 @@ class App
     end
   end
 
-  # rubocop:disable Metrics/MethodLength
   def create_person
     puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     choice = gets.chomp.to_i
@@ -51,7 +50,6 @@ class App
       puts 'INVALID NUMBER!!'
     end
   end
-  # rubocop:enable Metrics/MethodLength
 
   def create_student(age, name)
     puts 'Student\'s Classroom'
