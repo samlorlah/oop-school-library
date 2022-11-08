@@ -1,6 +1,8 @@
 require './app'
 
 class Menu
+  attr_accessor :storage
+
   def initialize
     @app = App.new
   end
@@ -17,10 +19,9 @@ class Menu
       6 - List all rentals for a given person id
       7 - Exit"
     option = gets.chomp.to_i
-    if (option == 7) then return puts 'Thank you for using the school library!'
-    else 
-      options(option)
-    end
+    return puts 'Thank you for using the school library!' if option == 7
+
+    options(option)
   end
 
   def options(option)
@@ -32,9 +33,9 @@ class Menu
     when 3
       @app.create_person
     when 4
-      @app.create_book
+      @app.add_new_book
     when 5
-      @app.create_rental
+      @app.add_new_rental
     when 6
       @app.list_all_rentals
     else
