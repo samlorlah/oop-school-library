@@ -19,6 +19,9 @@ class Menu
   end
 
   def options(option)
+    if (option == 7) then
+      return puts 'Thank you for using the school library!'
+    else
     case option
     when 1
       @app.list_all_books
@@ -35,5 +38,8 @@ class Menu
     else
       puts 'invalid Input. Please try again'
     end
+    end
+    display_list()
+    options(gets.chomp.to_i)
   end
 end

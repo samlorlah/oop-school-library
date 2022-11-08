@@ -80,9 +80,14 @@ class App
     title = gets.chomp
     puts 'Book Author: '
     author = gets.chomp
+    add_new_book(title, author)
+  end
+
+  def add_new_book(title,author)
     @books.push(Book.new(title, author))
     puts 'Book created successfully!'
   end
+
 
   def create_rental
     puts 'Select a book from the following list by number'
@@ -93,6 +98,10 @@ class App
     p_choice = gets.chomp.to_i
     puts 'Enter today\'s date: '
     date = gets.chomp
+    add_new_rental(bk_choice, p_choice, date)
+  end
+
+  def add_new_rental(bk_choice, p_choice, date)
     @rentals.push(Rental.new(date, @books[bk_choice], @peoples[p_choice]))
     puts 'Rental added successfully'
   end
