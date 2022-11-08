@@ -34,7 +34,6 @@ class App
     end
   end
 
-  # rubocop:disable Metrics/MethodLength
   def create_person
     puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     choice = gets.chomp.to_i
@@ -44,30 +43,37 @@ class App
     age = gets.chomp.to_i
     case choice
     when 1
-      puts 'Student\'s Classroom'
-      classroom = gets.chomp.to_s
-      puts 'Has Parent Permission? Y / N'
-      permission = gets.chomp.strip.upcase
-      case permission
-      when 'Y'
-        @peoples.push(Student.new(classroom, age, true, name))
-        puts 'Student created successfully.'
-      when 'N'
-        @peoples.push(Student.new(classroom, age, false, name))
-        puts 'Student created successfully.'
-      else
-        puts 'Invalid Input'
-      end
+      create_student(age, name)
     when 2
-      puts 'Teacher\'s Specialization'
-      specialization = gets.chomp.to_s
-      @peoples.push(Teacher.new(specialization, age, true, name))
-      puts 'Teacher created successfully.'
+      create_teacher(age, name)
     else
       puts 'INVALID NUMBER!!'
     end
   end
-  # rubocop:enable Metrics/MethodLength
+
+  def create_student(age, name)
+    puts 'Student\'s Classroom'
+    classroom = gets.chomp.to_s
+    puts 'Has Parent Permission? Y / N'
+    permission = gets.chomp.strip.upcase
+    case permission
+    when 'Y'
+      @peoples.push(Student.new(classroom, age, true, name))
+      puts 'Student created successfully.'
+    when 'N'
+      @peoples.push(Student.new(classroom, age, false, name))
+      puts 'Student created successfully.'
+    else
+      puts 'Invalid Input'
+    end
+  end
+
+  def create_teacher(age, name)
+    puts 'Teacher\'s Specialization'
+    specialization = gets.chomp.to_s
+    @peoples.push(Teacher.new(specialization, age, true, name))
+    puts 'Teacher created successfully.'
+  end
 
   def create_book
     puts 'Book Title: '
