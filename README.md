@@ -7,10 +7,25 @@ Frameworks : none
 Technologies used : Git, Gitflows, Github, Rubocop
 
 # Getting Started
-
+To get a local copy up and running follow these simple example steps.
 
 # Prerequisites
+- Computer with good internet connection
+- install Ruby on your computer
+- Hava a basic knowledge of Ruby and OOP concept
+- Have visual-studio code or any other code editor installed on your computer.
 
+# Setup
+In order to get a copy of this project;
+- Clone this repository using `git clone https://github.com/samlorlah/oop-school-library.git`
+- Or Download Zip file and extract into your computer.
+
+# Install
+Run `bundle install` to install the required libraries
+
+# Run tests
+Run the command below on your terminal.
+`Rubocop -A'
 
 ## Authors
 
@@ -33,3 +48,8 @@ Feel free to check the issues page.
 
 Show your support
 Give a star if you like this project!
+
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
