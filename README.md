@@ -20,6 +20,13 @@ Technologies used : Git, Gitflows, Github, Rubocop
 - LinkedIn: [charlotte-divine](https://www.linkedin.com/in/muyiwa-fawole/)
 
 
+👤 **Juan Diaz (Juan Diaz)**
+
+- GitHub: [@juanmanuelbyc](https://github.com/juanmanuelbyc)
+- Twitter: [@twitter](https://twitter.com/juanmanueldiar)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/juan-díaz-5281b3111/)
+
+
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the issues page.

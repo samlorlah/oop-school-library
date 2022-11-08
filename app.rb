@@ -34,7 +34,6 @@ class App
     end
   end
 
-  # rubocop:disable Metrics/MethodLength
   def create_person
     puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     choice = gets.chomp.to_i
@@ -48,37 +47,48 @@ class App
       classroom = gets.chomp.to_s
       puts 'Has Parent Permission? Y / N'
       permission = gets.chomp.strip.upcase
-      case permission
-      when 'Y'
-        @peoples.push(Student.new(classroom, age, true, name))
-        puts 'Student created successfully.'
-      when 'N'
-        @peoples.push(Student.new(classroom, age, false, name))
-        puts 'Student created successfully.'
-      else
-        puts 'Invalid Input'
-      end
+      create_student(age, name, classroom, permission)
     when 2
       puts 'Teacher\'s Specialization'
       specialization = gets.chomp.to_s
-      @peoples.push(Teacher.new(specialization, age, true, name))
-      puts 'Teacher created successfully.'
+      create_teacher(age, name, specialization)
     else
       puts 'INVALID NUMBER!!'
     end
   end
-  # rubocop:enable Metrics/MethodLength
 
-  def create_book
+  def create_student(age, name, classroom, permission)
+    case permission
+    when 'Y'
+      @peoples.push(Student.new(classroom, age, true, name))
+      puts 'Student created successfully.'
+    when 'N'
+      @peoples.push(Student.new(classroom, age, false, name))
+      puts 'Student created successfully.'
+    else
+      puts 'Invalid Input'
+    end
+  end
+
+  def create_teacher(age, name, specialization)
+    @peoples.push(Teacher.new(specialization, age, true, name))
+    puts 'Teacher created successfully.'
+  end
+
+  def add_new_book
     puts 'Book Title: '
     title = gets.chomp
     puts 'Book Author: '
     author = gets.chomp
+    create_book(title, author)
+  end
+
+  def create_book(title, author)
     @books.push(Book.new(title, author))
     puts 'Book created successfully!'
   end
 
-  def create_rental
+  def add_new_rental
     puts 'Select a book from the following list by number'
     list_all_books
     bk_choice = gets.chomp.to_i
@@ -87,6 +97,10 @@ class App
     p_choice = gets.chomp.to_i
     puts 'Enter today\'s date: '
     date = gets.chomp
+    create_rental(bk_choice, p_choice, date)
+  end
+
+  def create_rental(bk_choice, p_choice, date)
     @rentals.push(Rental.new(date, @books[bk_choice], @peoples[p_choice]))
     puts 'Rental added successfully'
   end
