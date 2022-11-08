@@ -19,12 +19,12 @@ class Student < Person
 
   def as_json()
     {
-        type: Student,
-        name: @name,
-        id: @id,
-        age: @age,
-        classroom: @classroom,
-        parent_permission: @parent_permission
+      type: Student,
+      name: @name,
+      id: @id,
+      age: @age,
+      classroom: @classroom,
+      parent_permission: @parent_permission
     }
   end
 end

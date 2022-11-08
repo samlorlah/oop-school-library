@@ -14,8 +14,8 @@ class Book
 
   def as_json()
     {
-        title: @title,
-        author: @author
+      title: @title,
+      author: @author
     }
   end
 end

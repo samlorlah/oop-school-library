@@ -12,11 +12,11 @@ class Teacher < Person
 
   def as_json()
     {
-        type: Teacher,
-        name: @name,
-        id: @id,
-        age: @age,
-        specialization: @specialization
+      type: Teacher,
+      name: @name,
+      id: @id,
+      age: @age,
+      specialization: @specialization
     }
   end
 end
