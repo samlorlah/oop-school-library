@@ -9,4 +9,12 @@ class Rental
     @person = person
     person.rentals << self
   end
+
+  def as_json()
+    {
+        person_id: @person.id,
+        date: @date,
+        book_title: @book.title
+    }
+  end
 end

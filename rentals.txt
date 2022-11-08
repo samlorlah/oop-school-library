@@ -1,0 +1,1 @@
+[{:person_id=>869, :date=>"11/08/2022", :book_title=>"Iliad"}, {:person_id=>940, :date=>"11/05/2022", :book_title=>"Quijote"}]

@@ -1,0 +1,1 @@
+[{:type=>Student, :name=>"Hanna", :id=>940, :age=>16, :classroom=>"201", :parent_permission=>false}, {:type=>Teacher, :name=>"Vincent", :id=>869, :age=>54, :specialization=>"Math"}]
