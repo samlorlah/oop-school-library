@@ -14,7 +14,8 @@ class Rental
     {
       person_id: @person.id,
       date: @date,
-      book_title: @book.title
+      book_title: @book.title,
+      book_author: @book.author
     }
   end
 end

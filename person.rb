@@ -1,8 +1,7 @@
 require './nameable'
 
 class Person < Nameable
-  attr_reader :id
-  attr_accessor :name, :age, :rentals
+  attr_accessor :id, :name, :age, :rentals
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     super()

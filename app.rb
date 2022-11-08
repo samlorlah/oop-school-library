@@ -35,21 +35,21 @@ class App
   end
 
   def create_person
-    puts 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     choice = gets.chomp.to_i
-    puts 'Name:'
+    print 'Name: '
     name = gets.chomp.to_s
-    puts 'Age:'
+    print 'Age: '
     age = gets.chomp.to_i
     case choice
     when 1
-      puts 'Student\'s Classroom'
+      print 'Student\'s Classroom: '
       classroom = gets.chomp.to_s
-      puts 'Has Parent Permission? Y / N'
+      print 'Has Parent Permission? Y / N: '
       permission = gets.chomp.strip.upcase
       create_student(age, name, classroom, permission)
     when 2
-      puts 'Teacher\'s Specialization'
+      print 'Teacher\'s Specialization: '
       specialization = gets.chomp.to_s
       create_teacher(age, name, specialization)
     else
@@ -76,9 +76,9 @@ class App
   end
 
   def add_new_book
-    puts 'Book Title: '
+    print 'Book Title: '
     title = gets.chomp
-    puts 'Book Author: '
+    print 'Book Author: '
     author = gets.chomp
     create_book(title, author)
   end
@@ -95,7 +95,7 @@ class App
     puts 'Select a person from the following list by number (not id)'
     list_all_people
     p_choice = gets.chomp.to_i
-    puts 'Enter today\'s date: '
+    print 'Enter today\'s date (dd-mm-yyyy): '
     date = gets.chomp
     create_rental(bk_choice, p_choice, date)
   end

@@ -7,6 +7,7 @@ class Menu
   def initialize
     @app = App.new
     @storage = Storage.new(@app)
+    storage.read_data
   end
 
   def display_list
@@ -37,9 +38,9 @@ class Menu
     when 3
       @app.create_person
     when 4
-      @app.create_book
+      @app.add_new_book
     when 5
-      @app.create_rental
+      @app.add_new_rental
     when 6
       @app.list_all_rentals
     else

@@ -1,1 +1,0 @@
-[{:title=>"QUijote", :author=>"Cervantes"}]
