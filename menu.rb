@@ -1,10 +1,13 @@
 require './app'
+require './storage'
 
 class Menu
   attr_accessor :storage
 
   def initialize
     @app = App.new
+    @storage = Storage.new(@app)
+    storage.read_data
   end
 
   def display_list
@@ -19,8 +22,10 @@ class Menu
       6 - List all rentals for a given person id
       7 - Exit"
     option = gets.chomp.to_i
-    return puts 'Thank you for using the school library!' if option == 7
-
+    if option == 7
+      storage.write_data
+      return puts 'Thank you for using the school library!'
+    end
     options(option)
   end
 
