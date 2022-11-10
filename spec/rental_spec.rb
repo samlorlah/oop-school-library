@@ -9,7 +9,7 @@ describe Rental do
   context('Create Rental with book and person') do
     it('expects Rental Date to equal 01/02/2022') do
       rental = Rental.new('01/02/2022', @book, @person)
-      expect(rental.date).to eql ('01/02/2022')
+      expect(rental.date).to eql('01/02/2022')
     end
 
     it('expects Rental Book to equal class Book') do
@@ -28,7 +28,7 @@ describe Rental do
       rental = @book.add_rental(@person, '02/04/2020')
       expect(rental.book).to be(@book)
     end
-    
+
     it('Create Rental through Person object') do
       rental = @person.add_rental('02/04/2020', @book)
       expect(rental.person).to be(@person)

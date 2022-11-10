@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe (Classroom) do
+describe(Classroom) do
   before(:each) do
     @classroom = Classroom.new('Grade 6')
   end
